@@ -21,23 +21,10 @@ function sendDingTalk(text) {
 function report() {
   const d = new Date();
   const ds = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-  return `📊 千象盒子库存日报 - ${ds}
+  return `📦 千象盒子库存日报已更新 - ${ds}
 
-📦 查看完整报表（含明细表格）：
-${REPORT_URL}
+✅ 最新库存数据已同步至 GitHub Pages
+🔗 ${REPORT_URL}
 
-📋 本周可售TOP5
-
-1. AS164SE-MX (64)
-2. SR-NF005-MX (61)
-3. SD-54S1S-MX (48)
-4. WL-KYDS871 (48)
-5. LY-54K2-MX (44)
-
-⚠️ 缺货预警（可售=0）
-SR-AF1323-MX / MS-2185C-MX / WL-JMLB1218-MX
-
-📌 详情请点击上方链接查看`;
+📌 点击上方链接查看完整报表（含各SKU明细表格）`;
 }
-
-sendDingTalk(report()).then(() => { console.log('✅ OK'); process.exit(0); }).catch(e => { console.error('❌', e); process.exit(1); });
